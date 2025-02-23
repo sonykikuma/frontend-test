@@ -44,6 +44,45 @@ const Dashboard = () => {
     ],
   };
 
+  const projectCards = [
+    {
+      title: "Insurance App",
+      company: "Verti",
+      budget: "70,000€",
+      profitability: "-2,500€",
+      progress: "100 hours over Budget!",
+      progressColor: "danger",
+      image: "https://via.placeholder.com/50",
+    },
+    {
+      title: "Neo",
+      company: "Bankia",
+      budget: "70,000€",
+      profitability: "4,000€",
+      progress: "1000 sold hours",
+      progressColor: "warning",
+      image: "https://via.placeholder.com/50",
+    },
+    {
+      title: "VR Website",
+      company: "Barça",
+      budget: "70,000€",
+      profitability: "4,000€",
+      progress: "2000 sold hours",
+      progressColor: "info",
+      image: "https://via.placeholder.com/50",
+    },
+    {
+      title: "VR Website",
+      company: "Barça",
+      budget: "70,000€",
+      profitability: "4,000€",
+      progress: "1100 sold hours",
+      progressColor: "success",
+      image: "https://via.placeholder.com/50",
+    },
+  ];
+
   return (
     <Container fluid className="p-4">
       <Row className="mb-4">
@@ -168,6 +207,39 @@ const Dashboard = () => {
             Filter
           </Button>
         </Col>
+      </Row>
+      <Row className="mt-4">
+        {projectCards.map((project, index) => (
+          <Col md={3} key={index}>
+            <Card body className="shadow-sm">
+              <div className="d-flex justify-content-between align-items-center">
+                <div>
+                  <h6 className="mb-0">{project.title}</h6>
+                  <small>{project.company}</small>
+                </div>
+                <img
+                  src="https://m.blog.hu/te/teologus/image/45_talalkoztam_istennel_teologus_blog_ifjusagi_reggeli_ahitat_sarga_teolgus_iges_kepek_hajas_istvan_teologus_bulyaki_adam.jpg"
+                  alt="project"
+                  className="rounded-circle"
+                  style={{ width: "50px", height: "50px" }}
+                />
+              </div>
+              <hr />
+              <p>Total Budget: {project.budget}</p>
+              <p className={`text-${project.progressColor}`}>
+                Profitability: {project.profitability}
+              </p>
+              <div className={`progress bg-light`}>
+                <div
+                  className={`progress-bar bg-${project.progressColor}`}
+                  style={{ width: "100%" }}
+                >
+                  {project.progress}
+                </div>
+              </div>
+            </Card>
+          </Col>
+        ))}
       </Row>
     </Container>
   );
