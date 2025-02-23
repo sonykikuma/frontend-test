@@ -86,7 +86,6 @@ const Dashboard = () => {
   return (
     <Container fluid className="p-4">
       <Row className="mb-4">
-        {/* <Row className="mb-4 text-center align-items-stretch"> */}
         <Col md={10}>
           <Row>
             <Col md={2}>

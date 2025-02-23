@@ -50,6 +50,12 @@ const Header = () => {
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
+                Time
+              </a>
+            </li>
+
+            <li className="nav-item">
+              <a className="nav-link" href="#">
                 Reports
               </a>
             </li>
